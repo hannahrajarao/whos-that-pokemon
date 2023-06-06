@@ -21,9 +21,16 @@ function showNewPokemon() {
             // divEl.appendChild(imgEl);
             document.querySelector('#pokemon-images').appendChild(imgEl);
         });
+}
+
+function checkAnswer() {
+    var text = document.querySelector('#name-entry').value;
+    if(text === currentName) {
+        console.log("Correct!");
+        incrementScore();
+        showNewPokemon();
     }
 }
-showPokemon();
 
 function skip() {
     console.log(currentName);
