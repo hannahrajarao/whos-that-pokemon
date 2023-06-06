@@ -17,3 +17,8 @@ async function showPokemon() {
 }
 showPokemon();
 
+
+function incrementScore() {
+    score++;
+    document.querySelector('#score').innerHTML = score;
+}
