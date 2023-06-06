@@ -13,14 +13,14 @@ function showNewPokemon() {
     fetch(url+num)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             var imgEl = document.querySelector('#pokemon-img');
             imgEl.src = data.sprites.front_default;
-            const name = data.name
+            const name = data.name;
             if(name.includes('nidoran'))
                 currentName = 'nidoran';
             else
                 currentName = name;
+            console.log(name);
         });
 }
 
@@ -33,14 +33,13 @@ function enter(event) {
 function checkAnswer() {
     var text = document.querySelector('#name-entry').value;
     if(text === currentName) {
-        console.log("Correct!");
         incrementScore();
         showNewPokemon();
     }
 }
 
 function skip() {
-    console.log(currentName);
+    console.log('The answer was '+currentName);
     showNewPokemon();
 }
 
