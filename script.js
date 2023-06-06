@@ -13,13 +13,14 @@ function showNewPokemon() {
     fetch(url+num)
         .then(response => response.json())
         .then(data => {
-            console.log(data.name);
-            // var divEl = document.createElement('div');
-            var imgEl = document.createElement('img');
+            console.log(data);
+            var imgEl = document.querySelector('#pokemon-img');
             imgEl.src = data.sprites.front_default;
-            // divEl.title = data.name;
-            // divEl.appendChild(imgEl);
-            document.querySelector('#pokemon-images').appendChild(imgEl);
+            const name = data.name
+            if(name.includes('nidoran'))
+                currentName = 'nidoran';
+            else
+                currentName = name;
         });
 }
 
