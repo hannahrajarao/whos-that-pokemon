@@ -1,8 +1,16 @@
 const url = 'https://pokeapi.co/api/v2/pokemon/';
-// const imgEl = document.querySelector('img');
-async function showPokemon() {
-    for(var i=1; i<=151; i++) {
-        await fetch(url+i)
+var currentName = "";
+var score = 0;
+
+function startTimer() {
+    document.querySelector('#start-button').style.visibility = 'hidden';
+    showNewPokemon();
+}
+
+function showNewPokemon() {
+    document.querySelector('#name-entry').value = "";
+    const num = Math.floor(Math.random()*151)+1
+    fetch(url+num)
         .then(response => response.json())
         .then(data => {
             console.log(data.name);
