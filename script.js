@@ -17,6 +17,10 @@ async function showPokemon() {
 }
 showPokemon();
 
+function skip() {
+    console.log(currentName);
+    showNewPokemon();
+}
 
 function incrementScore() {
     score++;
