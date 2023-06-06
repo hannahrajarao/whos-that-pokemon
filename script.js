@@ -23,6 +23,12 @@ function showNewPokemon() {
         });
 }
 
+function enter(event) {
+    event.preventDefault();
+    if(event.keyCode === 13)
+        checkAnswer();
+}
+
 function checkAnswer() {
     var text = document.querySelector('#name-entry').value;
     if(text === currentName) {
