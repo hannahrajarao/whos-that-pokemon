@@ -3,7 +3,7 @@ var currentName = "";
 var score = 0;
 
 function startTimer() {
-    document.querySelector('#start-button').style.visibility = 'hidden';
+    document.querySelector('#start-button').style.display = 'none';
     showNewPokemon();
 }
 
