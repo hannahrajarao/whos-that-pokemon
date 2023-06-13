@@ -60,6 +60,8 @@ function showNewPokemon() {
             const name = data.name;
             if(name.includes('nidoran'))
                 currentName = 'nidoran';
+            else if(name === 'mr-mime')
+                currentName = 'mr. mime';
             else
                 currentName = name;
             console.log(name);
