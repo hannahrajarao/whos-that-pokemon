@@ -2,6 +2,31 @@ const url = 'https://pokeapi.co/api/v2/pokemon/';
 var currentName = "";
 var score = 0;
 
+const nameEntry = document.querySelector('#name-entry');
+const timerNum = document.querySelector('#timer-num');
+const timerMessage = document.querySelector('#timer-message');
+const shinyMessage = document.querySelector('#shiny-message');
+
+timerNum.innerHTML = currentTime;
+
+function startZenMode() {
+    timerMessage.style.visibility = 'hidden';
+    startGame();
+}
+
+function startTimedMode() {
+    timerMessage.style.visibility = 'visible';
+    startTimer();
+    startGame();
+}
+
+function startGame() {
+    nameEntry.disabled = false;
+    document.querySelector('#check-answer-button').disabled = false;
+    document.querySelector('#skip-button').disabled = false;
+    showNewPokemon();
+}
+
 function startTimer() {
     document.querySelector('#start-button').style.display = 'none';
     showNewPokemon();
