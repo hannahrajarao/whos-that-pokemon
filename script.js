@@ -47,9 +47,8 @@ function resetText() {
 }
 
 function showNewPokemon() {
-    document.querySelector('#name-entry').value = "";
-    document.querySelector('#shiny-message').innerHTML = "";
-    const num = Math.floor(Math.random()*151)+1
+    resetText();
+    const num = Math.floor(Math.random()*151)+1;
     fetch(url+num)
         .then(response => response.json())
         .then(data => {
