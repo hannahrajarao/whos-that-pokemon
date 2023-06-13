@@ -75,7 +75,7 @@ function enter(event) {
 }
 
 function checkAnswer() {
-    var text = document.querySelector('#name-entry').value;
+    var text = nameEntry.value;
     if(text === currentName) {
         incrementScore();
         showNewPokemon();
@@ -95,7 +95,7 @@ function incrementScore() {
 function showShiny(imgEl, shiny_img) {
     console.log('shiny!');
     imgEl.src = shiny_img;
-    document.querySelector('#shiny-message').innerHTML = "You found a shiny pokemon!";
+    shinyMessage.innerHTML = "You found a shiny pokemon!";
 }
 
 function endGame() {
