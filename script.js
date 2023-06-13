@@ -16,7 +16,7 @@ function showNewPokemon() {
         .then(data => {
             var imgEl = document.querySelector('#pokemon-img');
             if(Math.random()*512 < 1)
-                showShiny(data.sprites.front_shiny);
+                showShiny(imgEl, data.sprites.front_shiny);
             else
                 imgEl.src = data.sprites.front_default;
             const name = data.name;
@@ -52,7 +52,7 @@ function incrementScore() {
     document.querySelector('#score').innerHTML = score;
 }
 
-function showShiny(shiny_img) {
+function showShiny(imgEl, shiny_img) {
     console.log('shiny!');
     imgEl.src = shiny_img;
     document.querySelector('#shiny-message').innerHTML = "You found a shiny pokemon!";
