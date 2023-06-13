@@ -96,3 +96,9 @@ function showShiny(imgEl, shiny_img) {
     imgEl.src = shiny_img;
     document.querySelector('#shiny-message').innerHTML = "You found a shiny pokemon!";
 }
+
+function endGame() {
+    nameEntry.disabled = true;
+    document.querySelector('#check-answer-button').disabled = true;
+    document.querySelector('#skip-button').disabled = true;
+}
