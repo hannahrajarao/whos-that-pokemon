@@ -1,5 +1,6 @@
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 var currentName = "";
+var currentTime = 15;
 var score = 0;
 
 const nameEntry = document.querySelector('#name-entry');
@@ -28,8 +29,21 @@ function startGame() {
 }
 
 function startTimer() {
-    document.querySelector('#start-button').style.display = 'none';
-    showNewPokemon();
+    const timerInterval = setInterval(() => {
+        if(currentTime <= 0) {
+            clearInterval(timerInterval);
+            endGame();
+        }
+        else {
+            currentTime--;
+            document.querySelector('#timer-num').innerHTML = currentTime;
+        }
+    }, 1000);
+}
+
+function resetText() {
+    nameEntry.value = "";
+    shinyMessage.innerHTML = "";
 }
 
 function showNewPokemon() {
