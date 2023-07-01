@@ -1,6 +1,6 @@
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 var currentName = "";
-var currentTime = 15;
+var currentTime = 60;
 var score = 0;
 
 const nameEntry = document.querySelector('#name-entry');
@@ -29,6 +29,7 @@ function startGame() {
 }
 
 function startTimer() {
+    currentTime = 60;
     const timerInterval = setInterval(() => {
         if(currentTime <= 0) {
             clearInterval(timerInterval);
