@@ -7,6 +7,7 @@ const nameEntry = document.querySelector('#name-entry');
 const timerNum = document.querySelector('#timer-num');
 const timerMessage = document.querySelector('#timer-message');
 const shinyMessage = document.querySelector('#shiny-message');
+const scoreEl = document.querySelector('#score');
 
 timerNum.innerHTML = currentTime;
 
@@ -23,6 +24,7 @@ function startTimedMode() {
 
 function startGame() {
     nameEntry.disabled = false;
+    resetScore();
     document.querySelector('#check-answer-button').disabled = false;
     document.querySelector('#skip-button').disabled = false;
     showNewPokemon();
@@ -90,7 +92,12 @@ function skip() {
 
 function incrementScore() {
     score++;
-    document.querySelector('#score').innerHTML = score;
+    scoreEl.innerHTML = score;
+}
+
+function resetScore() {
+    score = 0;
+    scoreEl.innerHTML = 0;
 }
 
 function showShiny(imgEl, shiny_img) {
